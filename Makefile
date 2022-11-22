@@ -32,7 +32,8 @@ OBJS = \
   $K/plic.o \
   $K/clk.o \
   $K/common.o \
-  $K/gpio.o
+  $K/gpio.o \
+  $K/ramdisk.o
 
 OBJS_KCSAN = \
   $K/start.o \
