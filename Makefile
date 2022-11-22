@@ -29,7 +29,9 @@ OBJS = \
   $K/exec.o \
   $K/sysfile.o \
   $K/kernelvec.o \
-  $K/plic.o
+  $K/plic.o \
+  $K/clk.o \
+  $K/common.o
 
 OBJS_KCSAN = \
   $K/start.o \
