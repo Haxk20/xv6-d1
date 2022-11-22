@@ -31,7 +31,8 @@ OBJS = \
   $K/kernelvec.o \
   $K/plic.o \
   $K/clk.o \
-  $K/common.o
+  $K/common.o \
+  $K/gpio.o
 
 OBJS_KCSAN = \
   $K/start.o \
