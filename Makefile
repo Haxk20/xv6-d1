@@ -262,6 +262,7 @@ endif
 
 fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS)
 	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS)
+	xxd -i fs.img > kernel/ramdisk.h
 
 -include kernel/*.d user/*.d
 
