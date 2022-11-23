@@ -1,12 +1,23 @@
 #ifndef __ASSEMBLER__
 
-// which hart (core) is this?
+#define PMP_R (1L << 0)
+#define PMP_W (1L << 1)
+#define PMP_X (1L << 2)
+#define PMP_MATCH_NAPOT (3L << 3)
+
+static inline uint64 
+r_plicbase()
+{
+  uint64 x;
+  asm volatile("csrr %0, 0xfc1" : "=r" (x) );
+  return x;
+}
+
 static inline uint64
 r_mhartid()
 {
-  uint64 x;
-  asm volatile("csrr %0, mhartid" : "=r" (x) );
-  return x;
+  // Nice ? Not even close. But eh. We have only 1 core.
+  return 0;
 }
 
 // Machine Status Register, mstatus
