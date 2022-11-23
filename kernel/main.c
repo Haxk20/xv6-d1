@@ -5,12 +5,18 @@
 #include "defs.h"
 
 volatile static int started = 0;
+extern char bss_start[], bss_end[];
 
 // start() jumps here in supervisor mode on all CPUs.
 void
 main()
 {
-  if(cpuid() == 0){
+  // clear BSS
+  for (volatile unsigned int *p = (volatile unsigned int *)bss_start; p < (volatile unsigned int*)bss_end; p++) {
+  *p = 0;
+  }
+
+  if(1){
     consoleinit();
     printfinit();
     printf("\n");
