@@ -4,10 +4,10 @@ ENTRY( _entry )
 SECTIONS
 {
   /*
-   * ensure that entry.S / _entry is at 0x80000000,
-   * where qemu's -kernel jumps.
+   * ensure that entry.S / _entry is at 0x40000000,
+   * where D1 jumps on boot
    */
-  . = 0x80000000;
+  . = 0x40000000;
 
   .text : {
     *(.text .text.*)
